@@ -1,0 +1,909 @@
+@font-face {
+    font-family: 'Science';
+    src: url('../fonts/ScienceGothic-VariableFont_CTRS\,slnt\,wdth\,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: linear-gradient(to right, #eac291, #f4d8b6, #f4d8b6, #f4d8b6, #eac291);
+}
+
+header {
+    width: 95%;
+    height: 12.5vh;
+
+    margin: 2.5vh auto;
+    border-radius: 5px;
+    opacity: 0;
+    
+    background-color: #de9c5f;
+    box-shadow: 0px 3px 10px #4a2c03;
+}
+
+.is-visible-top {
+    animation-name: show-block-top;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show-block-top {
+    0% {
+        transform: translateY(-15vh);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
+}
+
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+    height: 10vh;
+
+    text-decoration: none;
+}
+#logo:hover #logo-text {
+    color: white;
+}
+#logo-image {
+    width: auto;
+    height: 100%;
+    margin-right: 10px;
+
+    border: 2px solid #c58a52;
+    border-radius: 12.5%;
+
+    background-color: #f8e0c0;
+}
+#logo-text {
+    font-size: 2.5em;
+    font-weight: 500;
+    font-family: 'Science', Arial, Helvetica, sans-serif;
+
+    color: #f2dab2;
+
+    transition: all .3s ease;
+}
+
+#sections {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 9vh;
+
+    border-radius: 15px;
+    
+    background-color: #ce8b4d;
+    box-shadow: 0px 0px 2.5px #3f2b05;
+}
+.section {
+    position: relative;
+
+    margin: 0 25px;
+
+    font-size: 1.6em;
+    font-weight: 600;
+
+    color: #ece5c3;
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-align: center;
+
+    transition: all .5s ease;
+}
+.section::after {
+    content: "";
+    position: absolute;
+
+    width: 0;
+    height: 4px;
+    left: 50%;
+    bottom: -8px;
+    border-radius: 2px;
+
+    background-color: #ecbe1b;
+
+    transition: all .5s ease;
+}
+.section:hover {
+    color: #fcf4e5;
+}
+.section:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+
+main {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    height: max-content;
+    padding: 0 5%;
+}
+
+#games {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 20%;
+    height: max-content;
+    padding-bottom: 35px;
+    
+    border-radius: 10px;
+    opacity: 0;
+    
+    background-color: #e4ad79;
+    box-shadow: 0px 0px 10px #653d05;
+
+    animation-name: anim-game;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+    cursor: pointer;
+
+    width: 80%;
+    height: max-content;
+    
+    margin-left: 3%;
+    margin-top: 4vh;
+    padding-bottom: 2vh;
+
+    border-radius: 10px;
+    border: 3px solid #b78658;
+    box-shadow: 3.5px 3px 0px #cd9968, 7px 6px 0px #b78658;
+    background-color: #d19863;
+    
+
+    transition: all 0.15s ease;
+}
+.game:hover {
+    margin-left: -1%;
+
+    box-shadow: 6px 4.5px 0px #cd9968, 12px 9px 0px #b78658;
+}
+.game-icon {
+    width: 70%;
+    height: auto;
+    margin: 3vh 0;
+
+    border: 3.5px solid #c58a52;
+    border-radius: 12.5%;
+
+    background-color: #e3b284;
+}
+.game-offset {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: max-content;
+}
+.game-title {
+    width: 100%;
+
+    text-align: center;
+
+    color: #5e3f07;
+}
+.game-price {
+    width: max-content;
+
+    margin-top: 1vh;
+    padding: 0.3vh 3%;
+
+    border-radius: 7px;
+    border: 2px solid #c18a58;
+
+    background-color: #e3b284;
+    color: #734e09;
+}
+.game-progress {
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+    right: 6.5%;
+    bottom: 5%;
+
+    border-radius: 50%;
+}
+
+@keyframes anim-game {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+
+#info {
+    width: 78%;
+    height: max-content;
+    padding-bottom: 5vh;
+
+    border-radius: 10px;
+    opacity: 0;
+
+    background-color: #ebb583;
+    box-shadow: 0px 0px 10px #653d05;
+
+    animation-name: anim-info;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes anim-info {
+    0% {
+        transform: translateX(20%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+#info-first {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 3vh 0;
+}
+
+#info-main {
+    display: flex;
+
+    width: 75%;
+}
+
+#info-icon {
+    width: 25%;
+    height: max-content;
+    margin: 0 5%;
+
+    border: 4px solid #c58a52;
+    border-radius: 17.5%;
+
+    background-color: #efc790;
+}
+
+#info-charact {
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+    margin-top: 0.5vh;
+}
+
+#info-title {
+    width: 100%;
+    font-size: 2.75em;
+    padding-bottom: 5px;
+
+    position: relative;
+    
+    color: #653d05;
+}
+#info-title::after {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+
+    background-color: #5e3f07;
+}
+
+#info-params {
+    display: flex;
+
+    color: #5e3f07;
+}
+.info-param {
+    margin: 1vh 5%;
+}
+#info-categ {
+    width: 40%;
+}
+#info-price {
+    font-weight: 700;
+}
+/* #info-progress {
+
+} */
+
+#info-get {
+    height: 100%;
+    margin: 2vh 5%;
+    padding: 0px 10px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Science';
+
+    font-size: 2em;
+    /* font-weight: 700; */
+
+    /* color: #c18a58;
+    background-color: #eac291; */
+    color: #eac291;
+    background-color: #c18a58;
+    box-shadow: 0px 0px 5px #5e3f07;
+
+    transition: all 0.1s ease;
+}
+#info-get:hover {
+    /* color: #eac291;
+    background-color: #c18a58; */
+    color: #c18a58;
+    background-color: #eac291;
+}
+
+
+#info-second {
+    display: flex;
+    justify-content: space-between;
+}
+
+#info-desc {
+    width: 65%;
+    margin-left: 6.5%;
+    
+    position: relative;
+
+    padding-top: 5px;
+
+    color: #653d05;
+    /* box-shadow: 0 -2px 0px #5e3f07; */
+}
+#info-desc::after {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 0;
+
+    background-color: #5e3f07;
+}
+#info-desc span {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+#info-screens {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 30%;
+    height: max-content;
+    margin: 0 4%;
+    padding-bottom: 3vh;
+
+    opacity: 0;
+}
+.info-screen {
+    width: 95%;
+    height: auto;
+    margin-top: 3vh;
+    
+    box-shadow: 0px 0px 7px black;
+}
+
+/* .block {
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+
+    width: 80%;
+    height: max-content;
+    border-radius: 10px;
+    margin: 2vh auto;
+    
+    background-color: #e8ba8f;
+    box-shadow: 0px 0px 10px #653d05;
+
+    opacity: 0;
+}
+
+.is-visible {
+    animation-name: show-block;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show-block {
+    0% {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.desc-section-title {
+    font-size: 2.3em;
+    font-weight: bold;
+
+    height: max-content;
+
+    margin: 0 7%;
+    padding-top: 2vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #a06732;
+}
+.desc-text {
+    font-size: 1.3em; 
+
+    height: max-content;
+    margin: 0 8%;
+
+    color: #a96321;
+}
+.desc-text a {
+    color: #bb3d2c;
+} */
+
+footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 95%;
+    height: 21.5vh;
+    margin: 3vh auto;
+
+    border-radius: 5px;
+    
+    background: linear-gradient(to bottom, #de9c5f, #de9c5f, #e1a063, #e3a66d, #e3a66d, #e3a66d, #e3a66d, #e1a063);
+    box-shadow: 0 -0.5px 10px #4a2c03;
+}
+
+#copyright {
+    width: auto;
+
+    margin: 0 4%;
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    padding: 0.5vh 2%;
+
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    border: 3px solid #d08f45;
+    border-radius: 10px;
+
+    background-color: #d69851;
+    color: #fcf4e5;
+}
+
+#links {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+
+    width: 80%;
+    margin: 0 auto;
+}
+#links div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: max-content;
+    height: 4.5vh;
+    margin-top: 1vh;
+    padding: 0 1.5%;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    
+    background-color: #de9c5f;
+}
+.link:hover {
+    background-color: #c58a52;
+}
+.link img {
+    width: auto;
+    height: 80%;
+}
+.link p {
+    margin-left: 3px;
+
+    color: #fbecd9;
+}
+
+@media (max-width: 1100px) {    
+    #sections {
+        height: 8vh;
+    }
+    .section {
+        font-size: 1.4em;
+    }
+
+    #logo {
+        height: 9vh;
+    }
+    #logo-text {
+        font-size: 2.25em;
+    }
+
+    footer {
+        height: 20vh;
+    }
+
+    #links {
+        width: 100%;
+    }
+    #copyright {
+        font-size: 1em;
+    }
+    .link {
+        height: 3.5vh;
+        font-size: 0.8em;
+    }
+
+
+    main {
+        flex-direction: column;
+    }
+
+    #games {
+        flex-direction: row;
+
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .game {
+        width: 29%;
+
+        margin-left: 3%;
+        margin-top: 4vh;
+        padding-bottom: 2vh;
+    }
+    .game:hover {
+        margin-left: 2.5%;
+        margin-right: 0.5%;
+
+        box-shadow: 6px 4.5px 0px #cd9968, 12px 9px 0px #b78658;
+    }
+
+    #info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        height: 10vh;
+        margin: 15px auto;
+    }
+    
+    #header {
+        padding: 0 5%;
+    }
+
+    #logo {
+        height: 8vh;
+    }
+    #logo-text {
+        font-size: 2em;
+    }
+
+    #sections {
+        height: 7vh;
+    }
+    
+    .section {
+        font-size: 1.2em;
+        margin: 0 15px;
+    }
+
+
+    footer {
+        height: 20vh;
+        margin: 25px auto;
+    }
+
+
+    #links {
+        grid-template-rows: repeat(3, 1fr);
+    }
+    #copyright {
+        font-size: 0.85em;
+    }
+    .link {
+        height: 2.5vh;
+        font-size: 0.7em;
+    }
+
+
+    #games {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 10vh;
+        margin: 10px auto;
+    }
+
+    #logo {
+        height: 6.5vh;
+    }
+    #logo-text {
+        font-size: 1.35em;
+    }
+
+    #sections {
+        height: 6.5vh;
+    }
+    .section {
+        font-size: 0.8em;
+    }
+
+    footer {
+        margin: 15px auto;
+    }
+
+
+    #games {
+        margin: 10px 0;
+        margin-top: 5px;
+    }
+    .game-title {
+        font-size: 1em;
+    }
+    .game-price {
+        font-size: 0.7em;
+    }
+    .game-progress {
+        width: 16px;
+        height: 16px;
+    }
+
+
+    #info-get {
+        font-size: 1.35em;
+    }
+    #info-title {
+        font-size: 2em;
+    }
+    #info-params {
+        font-size: 0.75em;
+    }
+    #info-second {
+        flex-direction: column;
+    }
+    #info-desc {
+        width: 87.5%;
+        font-size: 0.8em;
+    }
+    #info-desc span {
+        font-size: 0.95em;
+    }
+
+    #info-screens {
+        width: 60%;
+        padding-bottom: 1vh;
+    }
+    .info-screen {
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 450px) {
+    header {
+        height: 7vh;
+    }
+
+    #logo {
+        height: 4vh;
+    }
+    #logo-text {
+        font-size: 0.8em;
+    }
+
+    #sections {
+        height: 4.5vh;
+        border-radius: 7.5px;
+    }
+    .section {
+        font-size: 0.65em;
+        margin: 0 7.5px;
+    }
+    
+    footer {
+        height: 16vh;
+    }
+
+    #copyright {
+        font-size: 0.7em;
+    }
+    .link {
+        height: 1.75vh;
+        font-size: 0.55em;
+    }
+
+
+    #games {
+        flex-direction: column;
+    }
+    .game {
+        flex-direction: row;
+    
+        width: 90%;
+
+        margin-top: 20px;
+        margin-left: -3%;
+        padding-bottom: 0;
+    }
+    .game:hover {
+        margin-left: -4%;
+
+        box-shadow: 3.5px 4.5px 0px #cd9968, 7px 9px 0px #b78658;
+    }
+    .game-offset {
+        justify-content: end;
+        align-items: start;
+    }
+    .game-title {
+        font-size: 1.1em;
+
+        text-align: start;
+    }
+    .game-price {
+        font-size: 0.75em;
+    }
+    .game-icon {
+        width: 20%;
+        margin: 1.5vh 3%;
+    }
+    .game-progress {
+        width: 18px;
+        height: 18px;
+
+        right: 4%;
+        bottom: 7%;
+    }
+
+
+    #info-first {
+        flex-direction: column;
+    }
+    #info-main {
+        width: 92.5%;
+    }
+    #info-get {
+        width: 25%;
+        margin: 2vh auto;
+
+        font-size: 1.35em;
+    }
+    #info-charact {
+        width: 100%;
+    }
+    #info-title {
+        font-size: 1.5em;
+    }
+    #info-params {
+        font-size: 0.75em;
+    }
+    #info-second {
+        flex-direction: column;
+    }
+    #info-desc {
+        width: 87.5%;
+        font-size: 0.8em;
+    }
+    #info-desc span {
+        font-size: 0.95em;
+    }
+
+    #info-screens {
+        width: 60%;
+        padding-bottom: 1vh;
+    }
+    .info-screen {
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 400px)
+{
+    .game-title {
+        font-size: 0.9em;
+
+        text-align: start;
+    }
+    .game-price {
+        font-size: 0.6em;
+    }
+    .game-progress {
+        width: 15px;
+        height: 15px;
+    }
+
+    #info-params {
+        font-size: 0.65em;
+    }
+}
